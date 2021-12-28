@@ -1,5 +1,5 @@
 const api = {
-  key: "afaf9f8d48cff6cafd32e23220bcfdbf",
+  key: "7560930f8bde0b0ed8181dff56c0b573",
   base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -12,14 +12,14 @@ function setQuery(evt) {
   }
 }
 
-function getResults (query) {
+function getResults(query) {
   fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
     .then(weather => {
       return weather.json();
     }).then(displayResults);
 }
 
-function displayResults (weather) {
+function displayResults(weather) {
   let city = document.querySelector('.location .city');
   city.innerText = `${weather.name}, ${weather.sys.country}`;
 
@@ -37,7 +37,7 @@ function displayResults (weather) {
   hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
 }
 
-function dateBuilder (d) {
+function dateBuilder(d) {
   let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
